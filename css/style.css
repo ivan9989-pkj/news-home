@@ -1,0 +1,190 @@
+:root{
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+html{
+    
+    font-size: 62.25%;
+}
+
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+/*Navegador*/
+
+.header_wrapper{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+
+    --transform-hamburguer: scale(1);
+    --transform-close: scale(0);
+}
+
+.nav:has(.nav__links:target){
+    --transform-hamburguer: scale(0);
+    --transform-close: scale(1);
+}
+
+.nav::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.66);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.nav:has(.nav__links:target)::before{
+    pointer-events: unset;
+    opacity: 1;
+}
+
+.nav__menu, .nav__close{
+    grid-column: span 1 / -1;
+    grid-row: 1/2;
+    transition: .2s transform;
+}
+
+.nav__menu{
+    transform: var(--transform-hamburguer);
+}
+
+.nav__close{
+    transform: var(--transform-close);
+
+}
+
+.nav__links{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    max-width: 330px;
+    background-color: var(--Off-white);
+
+    display: grid;
+    gap: 1em;
+    grid-auto-rows: max-content;
+
+    padding: 100px 0 80px 40px;
+
+    overflow-y: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.nav__links:target{
+    opacity: 1;
+    pointer-events: unset;
+    transition-duration: .6s;
+}
+
+.nav__link{
+    color: var(--very-dark-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/*Main*/
+
+main { 
+    background-color: var(--Off-white);
+
+    max-width: 37rem;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.img_1{
+    background-image: url(../assets/images/image-web-3-mobile.jpg);
+    width: 350px;
+}
+
+
+
+
+/*Cuerpo*/
+
+p {
+    color: var(--Dark-grayish-blue);
+    
+}
+
+button{
+   text-decoration: none;
+   padding: 1rem;
+   background-color: var(--Soft-red); 
+   color: var(--Off-white);
+   border: none;
+   margin-bottom: 2rem;
+   width: 20rem;
+
+}
+
+.caja{
+    background-color: var(--Very-dark-blue);
+    padding: 2rem;
+}
+hr{
+    background-color:var(--Dark-grayish-blue);
+}
+
+.new {
+    color: var(--Soft-orange);
+    margin-bottom: 1.5rem;
+}
+h2{
+    color:  white;
+    font-size: 18px;
+}
+
+.parra2{
+    color: var(--Dark-grayish-blue);
+    opacity: 1;
+}
+
+.caja2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    
+}
+
+.img2{
+    width:175px ;
+    height: 175+px;
+}
+
+.part1{
+  margin-left: 2rem;
+}
+.letragrand{
+    color: var(--Dark-grayish-blue);
+}
+.letra{
+    color: var(--Very-dark-blue);
+}
